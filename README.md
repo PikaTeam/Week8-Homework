@@ -1,4 +1,16 @@
 # A* Implementation
+## Game link (itch.io)
+https://pikateam.itch.io/chasetile-week8hm
+
+## Balloon
+![Balloon](./github_media/balloon.png)
+use the balloon to enter the next scene which contains a new tilemap with tiles based on the game of SPACE FUNERAL 2: BLOOD BLOOD
+Gamplay of the original game can be found here:
+https://www.youtube.com/watch?v=w8lbZOqNmIM&ab_channel=atumsk
+The scene is based on the level that can be found at time of 2:32~
+
+## Movement
+Mouse only (left button on a tile)
 
 ## Weighted nodes/vertices/tiles/cells
 Each tile/cell has now a weight attached to it:

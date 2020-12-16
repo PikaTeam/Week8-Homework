@@ -1,24 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 using Priority_Queue;
 
-namespace Assets.Scripts._0_bfs
+namespace AStarTest
 {
     public class AStar
     {
+
         /**
-          * Description: returns a path from a starting point to the goal using the A*-heuristic algorithm.
-          * Input:
-          * <param name="graph"> a weighted graph to search a path on</param>
-          * <param name="startNode"> The starting point. </param>
-          * <param name="endNode"> The goal to get path to. </param>
-          * <param name="heuristic"> a function that accepts 2 nodes and returns a distance estimation between. </param>
-          * <param name="maxiterations"> Maximum iterations to run A* algorithm. </param>
-          * Output:
-          * <returns> sequence of nodes to go through as a path </returns>
-          */
+         * Description: returns a path from a starting point to the goal using the A*-heuristic algorithm.
+         * Input:
+         * <param name="graph"> a weighted graph to search a path on</param>
+         * <param name="startNode"> The starting point. </param>
+         * <param name="endNode"> The goal to get path to. </param>
+         * <param name="heuristic"> a function that accepts 2 nodes and returns a distance estimation between. </param>
+         * <param name="maxiterations"> Maximum iterations to run A* algorithm. </param>
+         * Output:
+         * <returns> sequence of nodes to go through as a path </returns>
+         */
         public static List<NodeType> GetPath<NodeType>(IWeightedGraph<NodeType> graph, NodeType startNode, NodeType endNode, Func<NodeType, NodeType, float> heuristic, int maxiterations = 1000)
         {
             List<NodeType> path = new List<NodeType>();
@@ -48,7 +48,7 @@ namespace Assets.Scripts._0_bfs
         {
             HashSet<EnrichedNode<NodeType>> exploredNodes = new HashSet<EnrichedNode<NodeType>>(); // "closed list"
             SimplePriorityQueue<EnrichedNode<NodeType>> scannedNodes = new SimplePriorityQueue<EnrichedNode<NodeType>>(); // "open list"
-
+            
             // add startNode to the scannedNodes
             var enrichedStartNode = new EnrichedNode<NodeType>(startNode, 0, heuristic(startNode, endNode));
             scannedNodes.Enqueue(
@@ -89,7 +89,7 @@ namespace Assets.Scripts._0_bfs
                             fullyEnrichedNodeInScan.lastUpdatedFrom = currentNode;
                         }
                         else continue;
-                    }
+                    }    
                     else if (exploredNodes.Contains(enrichedNodeInScan)) // if already visited at and explored path through it.
                     {
                         var fullyEnrichedNodeInScan = exploredNodes.Select(n => n)

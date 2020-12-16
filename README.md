@@ -30,5 +30,14 @@ The movement speed in a tile depends on the tile's weights factor, the time dela
 - Hills: 4
 - Swamp: 3
 
+## A* Tests
+There are 4 tests to A*
+- Using the Line Graph (only X-axis) with distance norm of L1
+- Another test using the LineGraph (only X-axis) with distance norm of L1
+- Using the 2D-Graph (X&Y-axes) with distance norm of L1 - added a heavy weight in the middle of the nodes to test that the algorithm surrounds it.
+- Using the 2D-Graph (X&Y-axes) with distance norm of L2 - added a heavy weight in the middle of the nodes to test that the algorithm surrounds it.
+
 ## Links
 Link to A*: [CLICK HERE](./Assets/Scripts/0-bfs/AStar.cs)
+
+Link to A* Tests: [CLICK HERE](./AStarTest/AStarTest/TestAStar.cs)
